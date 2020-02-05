@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 3
+* 해결한 문제 수 7
 
 ## 함수 정리
 - Arrays 클래스
@@ -35,3 +35,53 @@
     int[] arr1 = {1, 2, 3, 4, 5};
     int[] arr2 = Arrays.copyOfRange(arr1, 2, 4);    //출력결과 3 4
     ```
+    
+- ArrayList
+    - **사용법**
+    ``` java
+    //생성
+    ArrayList<Integer> numbers = new ArrayList<>();
+    
+    //추가
+    numbers.add(10);
+    numbers.add(20);
+    numbers.add(1,50); 
+    // 출력결과 10 50 20
+    
+    //삭제
+    numbers.remove(1); // 출력결과 10 20
+    
+    //가져오기
+    numbers.get(1); //출력결과 20
+    ```
+    
+    - **contains(Object o) : **
+    리스트에 객체가 존재하면 true 리턴
+    ``` java
+    String[] fruitsArray = {"apple", "banana", "mango"};
+    ArrayList<String> fruits = new ArrayList<>(Arrys.asList(fruitsArray));
+    System.out.println(fruits.contains("apple")); // 출력결과 true
+    System.out.println(fruits.contains("orange")); // 출력결과 false
+    ```
+    
+- String 클래스
+    - **substring(int beginindex, (int endindex)) : **
+    문자열에 지정한 범위에 속하는 문자열을 반환한다.(시작범위에 값은 포함하고, 끝나는 범위에 값은 포함하지않는다.)
+    ``` java
+    String str = "ABCDEF";
+    String test = str.substring(0, 2); //출력결과  AB
+    String test = str.substring(2); //출력결과 CDEF
+    ```
+    
+- for each 문
+    - **사용법 **
+    for(변수타입 변수이름 : 배열이름)
+      실행부분;
+    단 배열과 컬렉션 사용가능,값을 읽을수만 있고 수정할순없다
+    ''' java
+    int[] numbers = {1,2,3};
+    for(int num : arr) {
+      System.out.println(num); // 출력결과 1 2 3
+    }
+    ```
+    
