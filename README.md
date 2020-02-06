@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 10
+* 해결한 문제 수 11
 
 ## 함수 정리
 - #### Arrays 클래스
@@ -84,7 +84,8 @@
     
 - #### String 클래스
     - **substring(int beginindex, (int endindex)) :**
-    문자열에 지정한 범위에 속하는 문자열을 반환한다.(시작범위에 값은 포함하고, 끝나는 범위에 값은 포함하지않는다.)
+    문자열에 지정한 범위에 속하는 문자열을 반환한다.  
+    (시작범위에 값은 포함하고, 끝나는 범위에 값은 포함하지않는다.)
     ``` java
     String str = "ABCDEF";
     String test = str.substring(0, 2); //출력결과  AB
@@ -113,11 +114,20 @@
     
 - #### Math 클래스
     - **min(double a, double b) : 작은 값 반환**
-    - **max(double a, double b) : 큰값 반환**
+    - **max(double a, double b) : 큰 값 반환**
     ``` java
     int a = 10;
     int b = 5;
     min(a,b); //출력결과 5
     max(a,b); //출력결과 10
+    ```
+    
+- #### Character 
+    - *isDigit() : char 값이 숫자인지 여부를 판단하여 true/false 리턴**
+    ``` java
+    System.out.println(Character.isDigit('a')); //false
+    System.out.println(Character.isDigit('97')); //true
+    System.out.println(Character.isDigit(97)); //false
+    //Unicode 값으로 소문자 a로 인식
     ```
     
