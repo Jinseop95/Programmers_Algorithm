@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 11
+* 해결한 문제 수 12
 
 ## 함수 정리
 - #### Arrays 클래스
@@ -99,6 +99,23 @@
     str.toUpperCase();  // ABCD
     str.toLowerCase();  // abcd
     ```
+    - **split("기준문자") :**  
+    특정 문자를 기준으로 잘라서 배열에 저장
+    ``` java
+    String str = "A, B, C, D";
+    String[] array = str.split(",");
+    
+    //array[0] = A array[1] = B 
+    //array[2] = C array[3] = D 
+    ```
+    
+    - **toCharArray() :**  
+    문자열을 문자 배열로 변환
+    ``` java
+    String str ="ABCD"
+    char[] arr = str.toCharArray();
+    //출력결과 A B C D
+    ```
     
 - #### for each 문
     - **사용법**   
@@ -123,7 +140,7 @@
     ```
     
 - #### Character 
-    - *isDigit() : char 값이 숫자인지 여부를 판단하여 true/false 리턴**
+    - **isDigit() : char 값이 숫자인지 여부를 판단하여 true/false 리턴**
     ``` java
     System.out.println(Character.isDigit('a')); //false
     System.out.println(Character.isDigit('97')); //true
