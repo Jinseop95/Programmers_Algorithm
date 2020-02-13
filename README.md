@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 18
+* 해결한 문제 수 20
 
 ## 함수 정리
 - #### Arrays 클래스
@@ -47,6 +47,7 @@
     
     //삭제
     numbers.remove(1); // 출력결과 10 20
+    numbers.remove((Integer)20); // 50
     
     //가져오기
     numbers.get(1); //출력결과 20
@@ -75,6 +76,20 @@
     Collections.sort(str);    //[A,B,C,D]
     //내림차순 정렬
     Collections.sort(str, Collections.reverseOrder());    //[D, C, B, A]  
+    ```
+    
+    - **min(List) : Collections 클래스의 min() 이용, 리스트에서 최소값**
+    - **max(List) : Collections 클래스의 max() 이용, 리스트에서 최대값**
+    ``` java
+    ArrayList<Integer> list = new ArrayList<Integer>();
+    
+    int min = list.isEmpty() ? -1 : Collections.max(list);
+    //리스트가 비어있을 경우 예외 발생, 비어 있을 경우 기본값 처리
+    
+    list.add(1);
+    list.add(10);
+    System.out.println(Collections.min(list));    //1
+    System.out.println(Collections.max(list));    //10
     ```
     
 - #### String 클래스
