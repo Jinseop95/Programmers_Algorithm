@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 21
+* 해결한 문제 수 : 25
 
 ## 함수 정리
 - #### Arrays 클래스
@@ -158,6 +158,12 @@
     int b = 5;
     min(a,b); //출력결과 5
     max(a,b); //출력결과 10
+    ```
+    - **pow(double a, double b) : a의 b제곱을 구함**
+    - **sqrt(double a): a의 제곱근을 구함**
+    ``` java
+    System.out.println(Math.pow(2,3));  //8
+    System.out.println(Math.sqrt(9)); //3
     ```
     
 - #### Character 클래스
