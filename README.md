@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 25
+* 해결한 문제 수 : 28
 
 ## 함수 정리
 - #### Arrays 클래스
@@ -109,13 +109,39 @@
     str.toUpperCase();  // ABCD
     str.toLowerCase();  // abcd
     ```
-    - **split("기준문자") : 특정 문자를 기준으로 잘라서 배열에 저장**
+    - **split(String regex) : 특정 문자를 기준으로 잘라서 배열에 저장** 
+    - **split(String regex, int limit) : limit는 배열의 크기 결정**  
+    - limit가 음수인 경우 : 찾는 패턴이 가능한한 최대로 적용되고 마지막 요소가 빈문자열일 경우 포함됩니다.
+
+- limit가 0인 경우 : 찾는패턴이 가능한한 최대로 적용되고 마지막 요소가 빈문자열일 경우 버려집니다(이것이 두 번째 인자가 없을때 동작입니다).
+
+- limit가 양수인 경우 : 찾는 패턴이 limit - 1회 적용됩니다. 배열의 길이는 limit보다 크지 않으며, 적용하고 남은 나머지 문자열 전체가 마지막 요소가 됩니다.
+
     ``` java
     String str = "A, B, C, D";
     String[] array = str.split(",");
     
     //array[0] = A array[1] = B 
     //array[2] = C array[3] = D 
+    
+    String str2 ="123 456 789 ";
+      String[] a = str2.split(" ");
+      String[] b = str2.split(" ", 2);
+      String[] c = str2.split(" ", 4);
+      String[] d = str2.split(" ", -1); //마지막요소가 빈문자열일 경우 포함
+      
+      for(int i=0; i<a.length;i++){
+          System.out.println("a"+i+" ="+a[i]);  //	a0 =123 a1 =456 a2 =789
+      }
+      for(int i=0; i<b.length;i++){
+          System.out.println("b"+i+" ="+b[i]);  //  b0 =123 b1 =456 789 
+      }
+      for(int i=0; i<c.length;i++){
+          System.out.println("c"+i+" ="+c[i]);  // c0 =123 c1 =456 c2 =789 c3 =
+      }
+      for(int i=0; i<d.length;i++){
+          System.out.println("d"+i+" ="+d[i]);  // d0 =123 d1 =456 d2 =789 d3 =
+      }
     ```
     
     - **toCharArray() : 문자열을 문자 배열로 변환**
@@ -136,6 +162,13 @@
     System.out.println(a.equals(b)); //true;
     System.out.println(a==c); //false;
     System.out.println(a.equals(c)); //true;
+    ```
+    - ** 두 함수 모두 Object의 값을 String으로 변환**  
+    - **String.valueOf() : 파라미터가 null이면 문자열 "null"을 만들어서 반환**  
+    - **toString() :  대상 값이 null이면 NPE를 발생시키고 Object에 담긴 값이 String이 아니여도 출력**  
+    ``` java
+    String str = String.valueOf(123);
+    System.out.println(str);  //123
     ```
     
 - #### for each 문
@@ -173,4 +206,19 @@
     System.out.println(Character.isDigit('97')); //true
     System.out.println(Character.isDigit(97)); //false
     //Unicode 값으로 소문자 a로 인식
+    ```
+    
+    - **toUpperCase(char ch) : 입력받은 인자 값을 영문 대문자로 변환하여 리턴**  
+    - **toLowerCase(char ch) : 입력받은 인자 값을 영문 소문자로 변환하여 리턴**  
+    ''' java
+    System.out.println(Character.toUpperCase('a'));   // A
+    System.out.println(Character.toLowerCase('A'));   // a
+    ```
+    
+    - **char - '0' : char -> int 형변환**  
+    ``` java
+    char c = '2';
+    System.out.println(c);  // 2 char
+    System.out.println((int)c); //50 아스키값
+    System.out.println(c-'0');  //2 int
     ```
