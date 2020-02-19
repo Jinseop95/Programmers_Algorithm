@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 31
+* 해결한 문제 수 : 34
 
 ## 함수 정리
 - #### Arrays 클래스
@@ -17,6 +17,12 @@
     String[] str = {"11", "13", "23", "53", "223", "145", "53"};
     Arrays.sort(str,Collections.reverseOrder());  //출력결과 53 53 23 223 145 13 11
     // 다만 String타입일 경우, 숫자 자체를 인식하는 것이 아니다보니 무조건 첫번째 자리를 기준으로 내림차순 정렬
+    ```
+    - **2차원 행렬의 행, 열 크기 구하기**
+    ``` java
+    int[] arr = new int[3][4]; // 3행 4열
+    System.out.println(arr.length);   //3행
+    System.out.println(arr[0].length);  //4열
     ```
     
     - **copyOf(원본 배열, 복사할 길이) : 배열 복사**
