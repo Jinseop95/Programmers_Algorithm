@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 43
+* 해결한 문제 수 : 45
 
 ## 함수 정리
 - #### Arrays 클래스
@@ -226,3 +226,10 @@
     System.out.println((int)c); //50 아스키값
     System.out.println(c-'0');  //2 int
     ```
+## 오라클
+- **null 값을 조회하는 방법**
+``` sql
+WHERE [대상 컬럼] IS NULL     --NUll인지 비교
+WHERE [대상 컬럼] IS NOT NULL -- NULL이 아닌지 비교
+```
+    
