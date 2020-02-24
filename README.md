@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 45
+* 해결한 문제 수 : 47
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -176,6 +176,28 @@
     System.out.println(str);  //123
     ```
     
+    - **String.format(포맷형식, 인수) : 문자열에 특정 포맷 적용**
+    ```java
+    int a = 10;
+    String str = "abc";
+    
+    System.out.println(String.format("%04d", a));   //0010
+    
+    //길이만큼 좌측에 공백 채움
+    System.out.println(String.format("%6s", str));   //___abc ( _ = 공백)
+     //길이만큼 우측에 공백 채움
+    System.out.println(String.format("%-6s", str));  //abc___   
+    ```
+    
+    -**String replace(CharSequence target, CharSequence replacement) : 문자열 내에 있는 모든 문자열을 replacement문자열로 바꾼 문자열 반환**
+    ```java
+    String s = "안녕하세요";
+    String s2 = s.replace("안녕","건강");
+    
+    System.out.println(s);  //안녕하세요
+    System.out.println(s2); //건강하세요
+    ```
+    
 - #### for each 문
     - **사용법**   
     for(변수타입 변수이름 : 배열이름)  
@@ -227,10 +249,63 @@
     System.out.println((int)c); //50 아스키값
     System.out.println(c-'0');  //2 int
     ```
+    
+- #### Integer 클래스
+    - **Integer.parseInt(String s) : 문자열을 int 형으로 반환**
+    ```java
+    String str = "123";
+    int a = Integer.parseInt(str);
+    ```
+    
+    - **Integer.toString(Int i) : int를 String으로 변환**
+    ```java
+    int a = 123;
+    String str = Integer.toString(a);
+    ```
+    
+    - **Integer.toBinaryString(Int i) : 10진수를 2진수로 변환해 String으로 반환**
+    - **Integer.toOctalString(Int i) : 10진수를 8진수로 변환해 String으로 반환**
+    - **Integer.toHexString(Int i) : 10진수를 16진수로 변환해 String으로 반환**
+    ```java
+    int a = 127;
+    String binaryString  = Integer.toBinaryString(a);   //1111111
+    String octalString   = Integer.toOctalString(a);   //177
+    String hexString   = Integer.toHexString(a);      //7f
+    ```
+    
+    - **Integer.pasrseInt(String s, Int n) : n진수를 10진수로 변환**
+    ```java
+    String binaryString = "1111111";
+    String octalString = "177";
+    String hexString = "7f";
+    
+    int a  = Integer.parseInt(binaryString, 2);   //127
+    int b   = Integer.parseInt(octalString, 8);   //127
+    int c   = Integer.parseInt(hexString, 16);    //127
+    ```    
+    
 ## 오라클
 - **IS NULL / IS NOT NULL : null 값을 조회하는 방법**
 ``` sql
 WHERE [대상 컬럼] IS NULL     -- NUll인지 비교
 WHERE [대상 컬럼] IS NOT NULL -- NULL이 아닌지 비교
 ```
-    
+
+- **rownum : 각 데이터의 rownum을 사용하여 원하는 개수만큼 추출**
+```sql
+-- 상위 5개 조회
+SELECT * FROM (
+    SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME)
+WHERE ROWNUM <=6; 
+
+-- 5 ~ 10개 사이 조회
+SELECT * FROM (
+    SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME)
+WHERE ROWNUM BETWEEN 5 AND 10; 
+
+/* 주의
+쿼리가 실행되는 순서는 FROM - WHERE - GROUP BY - SELECT - ORDER BY.
+ROWNUM 값이 할당되는 건 GROUP BY - ORDER BY 사이.
+그러므로 ORDER BY 전에 ROWNUM이 할당됨으로 정렬된 서브쿼리 결과(ORDER BY절)에 ROWNUM을 매겨야함.
+*/
+```    
