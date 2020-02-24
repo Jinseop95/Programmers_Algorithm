@@ -168,7 +168,7 @@
     System.out.println(a==c); //false;
     System.out.println(a.equals(c)); //true;
     ```
-    - ** 두 함수 모두 Object의 값을 String으로 변환**  
+    - **두 함수 모두 Object의 값을 String으로 변환**  
     - **String.valueOf() : 파라미터가 null이면 문자열 "null"을 만들어서 반환**  
     - **toString() :  대상 값이 null이면 NPE를 발생시키고 Object에 담긴 값이 String이 아니여도 출력**  
     ``` java
@@ -189,7 +189,8 @@
     System.out.println(String.format("%-6s", str));  //abc___   
     ```
     
-    -**String replace(CharSequence target, CharSequence replacement) : 문자열 내에 있는 모든 문자열을 replacement문자열로 바꾼 문자열 반환**
+    -**String replace(CharSequence target, CharSequence replacement) :**   
+    **문자열 내에 있는 모든 문자열을 replacement문자열로 바꾼 문자열 반환**
     ```java
     String s = "안녕하세요";
     String s2 = s.replace("안녕","건강");
