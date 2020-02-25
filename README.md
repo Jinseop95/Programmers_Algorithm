@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 47
+* 해결한 문제 수 : 49
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -189,8 +189,7 @@
     System.out.println(String.format("%-6s", str));  //abc___   
     ```
     
-    -**String replace(CharSequence target, CharSequence replacement) :**   
-    **문자열 내에 있는 모든 문자열을 replacement문자열로 바꾼 문자열 반환**
+    - **String replace(CharSequence target, CharSequence replacement) : 문자열 내에 있는 모든 문자열을 replacement문자열로 바꾼 문자열 반환**
     ```java
     String s = "안녕하세요";
     String s2 = s.replace("안녕","건강");
