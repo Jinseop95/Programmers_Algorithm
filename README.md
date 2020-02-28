@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 52
+* 해결한 문제 수 : 55
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -285,27 +285,61 @@
     ```    
     
 ## 오라클
-- **IS NULL / IS NOT NULL : null 값을 조회하는 방법**
-``` sql
-WHERE [대상 컬럼] IS NULL     -- NUll인지 비교
-WHERE [대상 컬럼] IS NOT NULL -- NULL이 아닌지 비교
-```
+  - **IS NULL / IS NOT NULL : null 값을 조회하는 방법**
+  ``` sql
+  WHERE [대상 컬럼] IS NULL     -- NUll인지 비교
+  WHERE [대상 컬럼] IS NOT NULL -- NULL이 아닌지 비교
+  ```
 
-- **rownum : 각 데이터의 rownum을 사용하여 원하는 개수만큼 추출**
-```sql
--- 상위 5개 조회
-SELECT * FROM (
-    SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME)
-WHERE ROWNUM <=6; 
+  - **rownum : 각 데이터의 rownum을 사용하여 원하는 개수만큼 추출**
+  ```sql
+  -- 상위 5개 조회
+  SELECT * FROM (
+      SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME)
+  WHERE ROWNUM <=6; 
 
--- 5 ~ 10개 사이 조회
-SELECT * FROM (
-    SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME)
-WHERE ROWNUM BETWEEN 5 AND 10; 
+  -- 5 ~ 10개 사이 조회
+  SELECT * FROM (
+      SELECT NAME FROM ANIMAL_INS ORDER BY DATETIME)
+  WHERE ROWNUM BETWEEN 5 AND 10; 
 
-/* 주의
-쿼리가 실행되는 순서는 FROM - WHERE - GROUP BY - SELECT - ORDER BY.
-ROWNUM 값이 할당되는 건 GROUP BY - ORDER BY 사이.
-그러므로 ORDER BY 전에 ROWNUM이 할당됨으로 정렬된 서브쿼리 결과(ORDER BY절)에 ROWNUM을 매겨야함.
-*/
-```    
+  /* 주의
+  쿼리가 실행되는 순서는 FROM - WHERE - GROUP BY - SELECT - ORDER BY.
+  ROWNUM 값이 할당되는 건 GROUP BY - ORDER BY 사이.
+  그러므로 ORDER BY 전에 ROWNUM이 할당됨으로 정렬된 서브쿼리 결과(ORDER BY절)에 ROWNUM을 매겨야함.
+  */
+  ```   
+  
+  - **NVL(값, 지정값) : 값이 NULL인 경우 지정값 출력**
+  ```sql
+  SELECT NVL(NAME, '없음') 
+    FROM ANIMAL;
+  ```
+  - **NVL2(값, 지정값1, 지정값2) : NULL이 아닌경우 지정값1 출력 , NULL인경우 지정값 2출력**
+  ```SQL
+  SELECT NVL2(NAME, '있음', '없음')
+    FROM ANIMAL;
+  ```
+  
+  - **BETWEEN A AND B : A와 B 사이의 값**
+  ```SQL
+  SELECT *
+  FROM ANIMAL
+  WHERE 칼럼 BETWEEN 1 AND 5
+  -- 1~5사이의 값
+  ```
+  
+  - **TO_CHAR(숫자혹은날짜,format) : 숫자나 날짜를 문자로 변환**
+  ```SQL
+  SELECT TO_CHAR(SYSDATE, 'YYYY-MM-DD') FROM DUAL; --2020-02-28
+  /*
+  TO_CHAR(123456789, '999,999,999')   --123,456,789
+  TO_CHAR(SYSDATE, 'HH24:MI:SS')  --15:14:31
+  TO_CHAR(SYSDATE, 'HH:MI:SS')    --3:14:31
+  
+  YYYY : 년도   /   MONTH : 월   / MM : 01~12형태의 월(01)
+  D : 주중의 일 1~7   /   DAY : 일(월요일..) / DD : 일을 01~31 
+  HH : 시간을 01~12  / HL24 : 시간을 01~23  / MI : 분을 00~59
+  SS : 초를 01~59   / AM/PM : 오전,오후
+  */
+  ```
