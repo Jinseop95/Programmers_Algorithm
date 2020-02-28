@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 55
+* 해결한 문제 수 : 57
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -337,9 +337,16 @@
   TO_CHAR(SYSDATE, 'HH24:MI:SS')  --15:14:31
   TO_CHAR(SYSDATE, 'HH:MI:SS')    --3:14:31
   
-  YYYY : 년도   /   MONTH : 월   / MM : 01~12형태의 월(01)
+  YYYY : 년도          /   MONTH : 월         / MM : 01~12 의 월(01)
   D : 주중의 일 1~7   /   DAY : 일(월요일..) / DD : 일을 01~31 
   HH : 시간을 01~12  / HL24 : 시간을 01~23  / MI : 분을 00~59
   SS : 초를 01~59   / AM/PM : 오전,오후
   */
   ```
+  
+  - **UPPER() : 대문자로 변환**
+  - **LOWER() : 소문자로 변환**
+  ```SQL
+  SELECT UPPER(칼럼명), LOWER(칼럼명) FROM 테이블;
+  ```
+   
