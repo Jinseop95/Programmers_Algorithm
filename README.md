@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 57
+* 해결한 문제 수 : 60
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -348,5 +348,13 @@
   - **LOWER() : 소문자로 변환**
   ```SQL
   SELECT UPPER(칼럼명), LOWER(칼럼명) FROM 테이블;
+  ```
+  
+  - **CASE 조건문**
+  ``` SQL
+  CASE 
+  WHEN SEX_UPON_INTAKE LIKE 'Neutered%' OR  SEX_UPON_INTAKE LIKE  'Spayed%' THEN 'O'
+  ELSE 'X'
+  END 
   ```
    
