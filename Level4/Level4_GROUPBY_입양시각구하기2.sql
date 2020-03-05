@@ -1,0 +1,12 @@
+-- 코드를 입력하세요 ORACLE
+/* level은 오라클에서 실행되는 모든 쿼리 내에서 사용 가능한 가상-열로서
+    트리 내에서 어떤 단계(level)에 있는지를 나타내는 정수값이다. */
+    
+SELECT HOUR, COUNT(DATETIME) FROM ANIMAL_OUTS A RIGHT OUTER JOIN
+(SELECT TO_NUMBER(LEVEL-1) HOUR FROM (
+    SELECT TO_DATE('20200305', 'YYYYMMDD') 
+    FROM DUAL
+) CONNECT BY LEVEL <= 24)B
+ON HOUR = TO_CHAR(DATETIME, 'HH24')
+GROUP BY HOUR
+ORDER BY HOUR;
