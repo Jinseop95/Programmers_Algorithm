@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 68
+* 해결한 문제 수 : 69
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -367,15 +367,13 @@
   - **COUNT() : 행의 수를 구함**
   ```SQL
   SELECT COUNT(*) FROM ANIMAL;  - ANIMAL테이블의 행의 개수를 구함
-  /*
-  NULL값을 포함하는 경우 : COUNT(*)
-  NULL값을 포함하지 않는 경우 : COUNT(컬럼명)
-  */
+  --NULL값을 포함하는 경우 : COUNT(*)
+  --NULL값을 포함하지 않는 경우 : COUNT(컬럼명)
   ```
   
   - **Connect by 계층적쿼리 : 데이터를 선택하여 계층적인 순서 그대로 리턴**
   - **LEVEL : 오라클에서 실행되는 모든 쿼리 내에서 사용 가능한 가상-열로서, 트리 내에서 어떤 단계(level)에 있는지를 나타내는 정수값**  
-  **계층적인 쿼리가 아니라면 모든 값이 0 **
+  **계층적인 쿼리가 아니라면 모든 값이 0**
   ```SQL
   SELECT TO_NUMBER(LEVEL-1) HOUR FROM (
     SELECT TO_DATE('20200305', 'YYYYMMDD') 
