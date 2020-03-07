@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 69
+* 해결한 문제 수 : 70
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -198,6 +198,18 @@
     System.out.println(s2); //건강하세요
     ```
     
+    - **startsWith(String prefix) : prefix 값으로 시작되는지 여부를 boolean 값으로 리턴
+    ```java
+    String str = "안녕하세요";
+    System.out.println(str.startsWith("안녕"));  //true
+    ```
+    
+    - **endsWith(String prefix) : prefix 값으로 끝나는지 여부를 boolean 값으로 리턴
+    ```java
+    String str = "안녕하세요";
+    System.out.println(str.endsWith("하세요"));  //true
+    System.out.println(str.endsWith("하세"));     //false
+    ```
 - #### for each 문
     - **사용법**   
     for(변수타입 변수이름 : 배열이름)  
