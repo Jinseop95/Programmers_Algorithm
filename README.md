@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 70
+* 해결한 문제 수 : 71
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -198,13 +198,13 @@
     System.out.println(s2); //건강하세요
     ```
     
-    - **startsWith(String prefix) : prefix 값으로 시작되는지 여부를 boolean 값으로 리턴
+    - **startsWith(String prefix) : prefix 값으로 시작되는지 여부를 boolean 값으로 리턴**
     ```java
     String str = "안녕하세요";
     System.out.println(str.startsWith("안녕"));  //true
     ```
     
-    - **endsWith(String prefix) : prefix 값으로 끝나는지 여부를 boolean 값으로 리턴
+    - **endsWith(String prefix) : prefix 값으로 끝나는지 여부를 boolean 값으로 리턴**
     ```java
     String str = "안녕하세요";
     System.out.println(str.endsWith("하세요"));  //true
@@ -296,6 +296,22 @@
     int c   = Integer.parseInt(hexString, 16);    //127
     ```    
     
+- #### 정규표현식
+    - **POSIX Character classes(US-ASCII only)** 
+    
+        | 표현식 | 의미 |
+        |:--------|:--------|
+        |\p{Lower}|소문자| 
+        |\p{Upper}|대문자| 
+        |\p{ASCII}|모든 ASCII 문자| 
+        |\p{Alpha}|문자| 
+        |\p{Digit}|숫자| 
+        |\p{Alnum}|문자와숫자| 
+        |\p{Punct}|특수 문자| 
+        |\p{Graph}|문자와 숫자와 특수 문자| 
+        |\p{Space}|모든 공백| 
+        |\p{XDigit}|16진수|
+
 ## 오라클
   - **IS NULL / IS NOT NULL : null 값을 조회하는 방법**
   ``` sql
