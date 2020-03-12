@@ -295,6 +295,20 @@
     int b   = Integer.parseInt(octalString, 8);   //127
     int c   = Integer.parseInt(hexString, 16);    //127
     ```    
+
+- #### Queue 인터페이스
+  - FIFO(First In Fisrt Out)
+  - **offer() : 데이터 삽입**
+  - **poll() : 큐의 맨 앞에 있는 요소 반환, 해당 요소 큐에서 제거**
+  - **peek() : 큐의 맨 앞에 있는 요소 반환**
+  - **remove() : 큐의 맨앞에 있는 요소 제거**
+  ```java
+  Queue<Integer> queue = new LinkedList<>(); 
+  queue.offer(1);
+  queue.offer(2);
+  queue.poll();   //1
+  queue.peek();   //2
+  ```
     
 - #### 정규표현식
     - **POSIX Character classes(US-ASCII only)** 
