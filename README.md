@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 73
+* 해결한 문제 수 : 75
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -254,7 +254,7 @@
     System.out.println(Character.toLowerCase('A'));   // a
     ```
     
-    - **char - '0' : char -> int 형변환**  
+    - **char - '0' (빼기) : char -> int 형변환**  
     ``` java
     char c = '2';
     System.out.println(c);  // 2 char
@@ -297,18 +297,23 @@
     ```    
 
 - #### Queue 인터페이스
-  - FIFO(First In Fisrt Out)
-  - **offer() : 데이터 삽입**
-  - **poll() : 큐의 맨 앞에 있는 요소 반환, 해당 요소 큐에서 제거**
-  - **peek() : 큐의 맨 앞에 있는 요소 반환**
-  - **remove() : 큐의 맨앞에 있는 요소 제거**
-  ```java
-  Queue<Integer> queue = new LinkedList<>(); 
-  queue.offer(1);
-  queue.offer(2);
-  queue.poll();   //1
-  queue.peek();   //2
-  ```
+  - #### LinkedList
+    - FIFO(First In Fisrt Out)
+    - **offer() : 데이터 삽입**
+    - **poll() : 큐의 맨 앞에 있는 요소 반환, 해당 요소 큐에서 제거**
+    - **peek() : 큐의 맨 앞에 있는 요소 반환**
+    - **remove() : 큐의 맨앞에 있는 요소 제거**
+    ```java
+    Queue<Integer> queue = new LinkedList<>(); 
+    queue.offer(1);
+    queue.offer(2);
+    queue.poll();   //1
+    queue.peek();   //2
+    ```
+  - #### PriorityQueue
+    - 우선순위큐 , 가장 낮은 순서로 poll(), Min Heap으로 정렬시킴  
+    ```java
+    PriorityQueue<Integer> pQueue = new PriorityQueue<>();
     
 - #### 정규표현식
     - **POSIX Character classes(US-ASCII only)** 
