@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 76
+* 해결한 문제 수 : 77
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -315,6 +315,25 @@
     ```java
     PriorityQueue<Integer> pQueue = new PriorityQueue<>();
     
+- #### Comparable, Comparator
+  - **Comparable** : 객체 간의 일반적인 정렬이 필요할 때, Comparable 인터페이스를 확장해서 정렬의 기준을 정의하는 compareTo() 메서드를 구현.  
+  - **Comparator** : 객체 간의 특정한 정렬이 필요할 때, Comparator 인터페이스를 확장해서 특정 기준을 정의하는 compare() 메서드를 구현.  
+  ```java
+  /*  int compare(int x, int y)
+        현재 객체 < 파라미터로 넘어온 객체: 음수 리턴
+        현재 객체 == 파라미터로 넘어온 객체: 0 리턴
+        현재 객체 > 파라미터로 넘어온 객체: 양수 리턴, 두 객체의 자리가 바뀜
+  */
+  Arrays.sort(arr, new Comparator<String>() {
+    public int compare(String o1, String o2){
+      return (o1).compareTo(o2);      
+      // (o1).compareTo(o2); 오름차순 
+      // (o2).compareTo(o1); 내림차순
+      }
+  });
+  
+  ```
+
 - #### 정규표현식
     - **POSIX Character classes(US-ASCII only)** 
     
