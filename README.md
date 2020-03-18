@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 79
+* 해결한 문제 수 : 80
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -314,7 +314,7 @@
     - 우선순위큐 , 가장 낮은 순서로 poll(), Min Heap으로 정렬시킴  
     ```java
     PriorityQueue<Integer> pQueue = new PriorityQueue<>();
-    
+    PriorityQueue<Integer> pQueue = new PriorityQueue<>(Collections.reverseOrder()); //내림차순 정렬
 - #### Comparable, Comparator
   - **Comparable** : 객체 간의 일반적인 정렬이 필요할 때, Comparable 인터페이스를 확장해서 정렬의 기준을 정의하는 compareTo() 메서드를 구현.  
   - **Comparator** : 객체 간의 특정한 정렬이 필요할 때, Comparator 인터페이스를 확장해서 특정 기준을 정의하는 compare() 메서드를 구현.  
