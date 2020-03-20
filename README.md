@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 82
+* 해결한 문제 수 : 83
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -295,6 +295,11 @@
     int b   = Integer.parseInt(octalString, 8);   //127
     int c   = Integer.parseInt(hexString, 16);    //127
     ```    
+    
+    - **Integer.bitCont(int i) : i를 2진수로 변환 후 1의 개수 반환**  
+    ```java
+    System.out.println(Integer.bitCount(12)); //2
+    ```
 
 - #### Queue 인터페이스
   - #### LinkedList
