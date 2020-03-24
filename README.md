@@ -341,28 +341,27 @@
 
 - #### Map
   - #### HashMap
-  - 데이터 저장은 느리지만 많은 양의 데이터를 검색하는데 뛰어남  (key, value), key 중복X, value 중복O , 키값의 오름차순으로저장
-  - **put(Object key, Object value) : Map에 key, value 저장**
-  - **bollean containsKey(Object key) : Map에 key와 일치하는 key 객체가 있는지 확인**
-  - **bollean containsValue(Object value) : Map에 value 일치하는 value 객체가 있는지 확인**
-  - **get(Object key) : key에 대응하는 value 값 반환**
-  - **Collection values() : Map에 저장된 모든 value 객체 반환**\
-  ```java
-  HashMap<String, Integer> hm = new HashMap<>();
-  hm.put("키값", 5);
-  hm.containsKey("키값");   //true
-  int tmp = hm.get("키값"); //5
-  Collection<Integer> values = hm.values();
-  ```
-  
-  - **clear() : Map의 모든 객체 삭제**
-  - **boolean isEmpty() : Map이 비어있는지 확인**
-  - **Set entrySet() : Map에 저장되어 있는 key-value쌍을 Map.Entry 타입의 객체로 저장한 Set 으로 반환**
-  - **Set keySet() : Map에 저장된 모든 key객체를 반환**
-  - **int size() : Map에 저장된 개수 반환**
+  - **데이터 저장은 느리지만 많은 양의 데이터를 검색하는데 뛰어남  (key, value), key 중복X, value 중복O , 키값의 오름차순으로저장**
+    - **put(Object key, Object value) : Map에 key, value 저장**
+    - **bollean containsKey(Object key) : Map에 key와 일치하는 key 객체가 있는지 확인**
+    - **bollean containsValue(Object value) : Map에 value 일치하는 value 객체가 있는지 확인**
+    - **get(Object key) : key에 대응하는 value 값 반환**
+    - **Collection values() : Map에 저장된 모든 value 객체 반환**\
+    ```java
+    HashMap<String, Integer> hm = new HashMap<>();
+    hm.put("키값", 5);
+    hm.containsKey("키값");   //true
+    int tmp = hm.get("키값"); //5
+    Collection<Integer> values = hm.values();
+    ```
+    - **clear() : Map의 모든 객체 삭제**
+    - **boolean isEmpty() : Map이 비어있는지 확인**
+    - **Set entrySet() : Map에 저장되어 있는 key-value쌍을 Map.Entry 타입의 객체로 저장한 Set 으로 반환**
+    - **Set keySet() : Map에 저장된 모든 key객체를 반환**
+    - **int size() : Map에 저장된 개수 반환**
 
 - #### Iterator<E> 인터페이스
-  - 자바의 컬렉션 프레임워크는 컬렉션에 저장된 요소를 읽어오는 방법을 Iterator 인터페이스로 표준화하고 있다.
+  - **자바의 컬렉션 프레임워크는 컬렉션에 저장된 요소를 읽어오는 방법을 Iterator 인터페이스로 표준화하고 있다.**
   - **boolean hasNext() : 해당 이터레이션(iteration)이 다음 요소를 가지고 있으면 true를 반환하고, 더 이상 다음 요소를 가지고 있지 않으면 false를 반환**
   - **E next() : 이터레이션(iteration)의 다음 요소를 반환**
   - **void remove() : 해당 반복자로 반환되는 마지막 요소를 현재 컬렉션에서 제거함. (선택적 기능)**
@@ -377,7 +376,7 @@
     int num = (int)it.next(); 
     System.out.println(num);    
   }       
-  /*결과
+  /* 결과
     5
     6
     2 */
