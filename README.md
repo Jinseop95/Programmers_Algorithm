@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 88
+* 해결한 문제 수 : 89
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -196,6 +196,13 @@
     
     System.out.println(s);  //안녕하세요
     System.out.println(s2); //건강하세요
+    ```
+    
+    - **String replaceAll(String regex, String replacement) : replace와는 다르게 1번째 인자에 정규표현식 사용 가능**
+    ```java
+    String s = "abcdef";
+    String s2 = s.replaceAll("[abf]","ㅋ");    //ㅋㅋcdeㅋ
+    String s3 = s.replaceAll("[^abc]", "0");   //abc000
     ```
     
     - **startsWith(String prefix) : prefix 값으로 시작되는지 여부를 boolean 값으로 리턴**
