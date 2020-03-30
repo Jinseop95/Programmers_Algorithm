@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 89
+* 해결한 문제 수 : 90
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -230,19 +230,33 @@
     ```
     
 - #### Math 클래스
-    - **min(double a, double b) : 작은 값 반환**
-    - **max(double a, double b) : 큰 값 반환**
+    - **Math.min(double a, double b) : 작은 값 반환**
+    - **Math.max(double a, double b) : 큰 값 반환**
     ``` java
     int a = 10;
     int b = 5;
     min(a,b); //출력결과 5
     max(a,b); //출력결과 10
     ```
-    - **pow(double a, double b) : a의 b제곱을 구함**
-    - **sqrt(double a): a의 제곱근을 구함**
+    - **Math.pow(double a, double b) : a의 b제곱을 구함**
+    - **Math.sqrt(double a): a의 제곱근을 구함**
     ``` java
     System.out.println(Math.pow(2,3));  //8
     System.out.println(Math.sqrt(9)); //3
+    ```
+    
+    - **double Math.floor(double a) : 버림**
+    - **double Math.ceil(double a)  : 올림**
+    - **double Math.abs(double a)   : 절댓값**
+    - **long Math.round(double a)   : 반올림**
+    ```java
+    double a = 28.43;
+    double b = -28.43;
+    
+    System.out.println(Math.floor(a));  //28.0
+    System.out.println(Math.ceil(a));   //29.0
+    System.out.println(Math.abs(a) + " ," + Math.abs(b)); //28.43 , 28.43
+    System.out.println(Math.round(a));  //28
     ```
     
 - #### Character 클래스
