@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 90
+* 해결한 문제 수 : 93
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -415,6 +415,20 @@
         |[a-z&&[def]]|d,e,f 중의 하나와 일치(교집합)|
         |[a-z&&[^bc]]|b와c를 제외한 a부터 z까지 중의 하나와 일치[ad-z]|
         |a-z&&[^m-p]]|m부터 p까지를 제외한 a부터 z까지 중의 하나와 일치|
+        |^|문자열의 시작|
+        |$|문자열의 종료|
+        |.|임의의 한문자|
+        |*|앞 문자가 없을 수도 무한정 많을수도|
+        |+|앞 문자가 하나 이상|
+        |?|앞 문자가 없거나 하나있음|
+        |{}|횟수 또는 범위|
+        |()|소괄호 안의 문자를 하나의 문자로 인식|
+        |\s|공백 문자|
+        |\S|공백 문자가 아닌 나머지 문자|
+        |\w|알파벳이나 숫자|
+        |\W|알파벳이나 숫자를 제외한 문자|
+        |\d|숫자[0-9]와 동일
+        |\D|숫자를 제외한 모든 문자|
         
     - **POSIX Character classes(US-ASCII only)** 
         | 표현식 | 의미 |
@@ -425,11 +439,30 @@
         |\p{Alpha}|문자| 
         |\p{Digit}|숫자| 
         |\p{Alnum}|문자와숫자| 
-        |\p{Punct}|특수 문자| 
+        |\p{Punct}|특수 문자|
         |\p{Graph}|문자와 숫자와 특수 문자| 
         |\p{Space}|모든 공백| 
         |\p{XDigit}|16진수|
 
+- #### Pattern 클래스 / Matcher클래스
+  ### Pattern  
+  - **Pattern compile(String regex) : 주어진 정규표현식으로부터 패턴을 만들어냄**
+  - **Matcher matcher(CharSequence input) : 입력 캐릭터시퀀스에서 패턴을 찾는 Matcher 객체를 만든다**
+  
+  ### Mathcer
+  - **boolean mathces() : 주어진 문자열 전체가 특정패턴과 일치하는가를 판단**
+  ```java
+  import java.util.regex.Matcher;
+  import java.util.regex.Pattern;
+  
+  Pattern pattern = Pattern.compile("^[a-z]+$");
+  Matcher match = pattern.matcher("123");
+  Matcher match2 = pattern.matcher("str");
+  
+  System.out.println(match.matches());    //false
+  System.out.println(match2.matches());   //true
+  ```
+  
 ## 오라클
   - **IS NULL / IS NOT NULL : null 값을 조회하는 방법**
   ``` sql
