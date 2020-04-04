@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 99
+* 해결한 문제 수 : 103
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
@@ -462,7 +462,28 @@
   System.out.println(match.matches());    //false
   System.out.println(match2.matches());   //true
   ```
+
+- #### 시간 차이 구하기
+  ### SimpleDateFormat
+  | 문자 | 의미 |
+  |:-------|:-----|
+  |y| 년|
+  |M| 월|
+  |d| 일|
+  |H| 시간(24h)|
+  |h| 시간(am/pm)|
+  |m| 분|
+  |s| 초|
   
+  ```java
+  import java.text.SimpleDateFormat;
+  import java.util.Date;
+  SimpleDateFormat df = new SimpleDateFormat("HH:mm");
+  Date start = df.parse("17:00");
+  Date end = df.parse("18:20");
+  long min = (end.getTime() - start.getTime()) / 60000;  // 출력결과 80
+  //1000밀리는 1초
+  ```
 ## 오라클
   - **IS NULL / IS NOT NULL : null 값을 조회하는 방법**
   ``` sql
