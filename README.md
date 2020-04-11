@@ -1,6 +1,6 @@
 # 프로그래머스 알고리즘 풀이
 
-* 해결한 문제 수 : 106
+* 해결한 문제 수 : 107
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
 
 ## 함수 정리
